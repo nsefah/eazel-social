@@ -1,6 +1,6 @@
 = simple_form_for @post do |f|
-  = f.input :title
-  = f.input :link
-  = f.input :description
+  = f.input :title, input_html: { minlength: 0 }
+  = f.input :link, input_html: { minlength: 0 }
+  = f.input :description, input_html: { minlength: 0 }
 
-  = f.button :submit  
+  = f.button :submit
