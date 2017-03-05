@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
-  def index
-
+  before_action :find_post, only: [:show, :edit, :update, :destroy]
+  def index #the algorithm for sorting a post for the user would go here 
+    @posts = Post.all.order("created_at DESC")
   end
 
   def show
@@ -22,7 +23,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   def update
@@ -36,6 +37,7 @@ class PostsController < ApplicationController
   private
 
   def find_post
+    @post = Post.find(params[:id])
   end
 
   def post_params
