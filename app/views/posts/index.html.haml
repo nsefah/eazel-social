@@ -11,5 +11,8 @@
       %p
       = post.comments.count
       Comments
+  %p
+    = post.get_likes.size
+    Likes
 
 = link_to "Add Post", new_post_path(@post)
