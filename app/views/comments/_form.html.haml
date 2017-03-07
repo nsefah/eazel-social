@@ -1,0 +1,3 @@
+= simple_form_for([@post, @post.comments.build]) do |f|
+  = f.input :content, label: "Reply", input_html: { minlength: 0 }
+  = f.button :submit, class: "button"
