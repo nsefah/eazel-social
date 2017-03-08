@@ -54,6 +54,7 @@ gem 'carrierwave'
 #ACTS_AS SERIES
 gem 'acts_as_votable'
 gem 'acts_as_commentable'
+gem 'acts_as_follower'
 
 #USERGEN
 gem 'faker'
