@@ -2,15 +2,14 @@
 - @posts.each do |post|
   = link_to(image_tag post.image.url(:small))
   %h2= link_to post.title, post
-  - post.comments.each do |comment|
-    - if post.comments.count == 1
-      %p
-      = post.comments.count
-      Comment
-    - else
-      %p
-      = post.comments.count
-      Comments
+  - if post.comments.count == 1
+    %p
+    = post.comments.count
+    Comment
+  - else
+    %p
+    = post.comments.count
+    Comments
   %p
     = post.get_likes.size
     Likes
