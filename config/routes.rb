@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'pages/index'
+
+  get 'pages/home'
+
+  get 'pages/new'
+
+  get 'pages/show'
+
+  get 'pages/edit'
+
+  get 'pages/form'
+
   #route for users
   devise_for :users
   resources :users do
