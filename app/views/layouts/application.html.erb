@@ -8,10 +8,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <!-- Devise requirements: -->
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
   <body>
+    <%= render 'layouts/nav' %>
+    <div class = 'container'>
     <!-- (EAZEL) Preload -->
     <!-- <div class="preloader" style="display: none;"> -->
         <!-- <div class="loader-inner ball-scale-ripple-multiple">
@@ -21,5 +20,8 @@
         </div> -->
     <!-- </div> -->
     <%= yield %>
+  </div>
   </body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 </html>
