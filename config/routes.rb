@@ -28,5 +28,5 @@ Rails.application.routes.draw do
   root 'posts#index'
   #stop file structure from being visible in the site
   get 'home' => 'pages#home'
-  get 'profile' => 'pages#profile'
+  get 'user/:id' => 'pages#profile'
 end
