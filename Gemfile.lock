@@ -42,7 +42,12 @@ GEM
     acts_as_follower (0.2.1)
     acts_as_votable (0.10.0)
     arel (7.1.4)
+    autoprefixer-rails (6.7.6)
+      execjs
     bcrypt (3.1.11)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.0.6)
     cancan (1.6.10)
@@ -227,6 +232,7 @@ DEPENDENCIES
   acts_as_commentable
   acts_as_follower
   acts_as_votable
+  bootstrap-sass
   byebug
   cancan
   carrierwave

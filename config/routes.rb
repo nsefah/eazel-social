@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'pages/index'
-
-  get 'pages/home'
 
   get 'pages/new'
 
@@ -29,4 +26,6 @@ Rails.application.routes.draw do
     resources :comments
   end
   root 'posts#index'
+  get 'home' => 'pages#home'
+  get 'explore' => 'pages#index'
 end
