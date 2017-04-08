@@ -1,0 +1,36 @@
+(User)
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand"=>
+        <img src="http://eazel.io/assets/logo/navbar-logo-c7a63ce30d2fca4b71392d85a1a87e3e081a61695b5f468d0ad2618a20acb141.png" height="40px">
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><%= link_to "Home",root_path %><span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Feed</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.name %><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="user/username">Profile</a></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to "Log Out", destroy_user_session_path, :method => :delete %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to "Settings", edit_user_registration_path %>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

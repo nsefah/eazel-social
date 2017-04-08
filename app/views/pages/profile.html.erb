@@ -1,0 +1,31 @@
+<%= @username %>'s profile
+<%= link_to "Add Post", new_post_path(@post) %>
+<div class = 'row'>
+  <div class = 'col-xs-3'>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p>User Info</p>
+      </div>
+    </div>
+  </div>
+
+  <div class = 'col-xs-6'>
+    <% for @post in @posts %>
+    <div class="panel panel-default">
+      <div class="panel-body">
+    <p>
+      <%= link_to @post.title, @post %>
+      <%= link_to (image_tag @post.image.url(:small)), @post %>
+    </p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div class = 'col-xs-3'>
+    <div class="panel panel-default">
+      <div class="panel-body">
+    <p>Additional</p>
+      </div>
+    </div>
+  </div>
+</div>
