@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  
+
   before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :authenticate_user!, except: [:index, :show]
   def index #the algorithm for sorting a post for the user would go here
@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 
   def new #generate new post
     @post = current_user.posts.build
+    @post.user_id = current_user.id
   end
 
   def create
@@ -58,7 +59,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :link, :description, :image)
+    params.require(:post).permit(:user_id, :title, :link, :description, :image)
   end
 
 
