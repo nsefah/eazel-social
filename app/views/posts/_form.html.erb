@@ -1,0 +1,14 @@
+<%= simple_form_for (@newPost) do |f| %>
+  <center>
+    <div class = "field">
+      <%= f.input :image %>
+      <%= f.input :title, input_html: { minlength: 0 } %>
+      <%= f.input :link, input_html: { minlength: 0 } %>
+      <%= f.input :description, input_html: { minlength: 0 } %>
+    </div>
+    <div class = "actions">
+      <%= f.submit "Add Post" %>
+      <!-- <%= f.button :submit %> -->
+    </div>
+  </center>
+<% end %>

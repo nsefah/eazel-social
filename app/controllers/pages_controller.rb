@@ -4,6 +4,7 @@ class PagesController < ApplicationController
     @username = params[:id]
 
     @posts = Post.all
+    @newPost = Post.new 
   end
 
   def home
