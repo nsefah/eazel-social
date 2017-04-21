@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
-
   get 'pages/new'
-
   get 'pages/show'
-
   get 'pages/edit'
-
   get 'pages/form'
 
   #route for users
   devise_for :users
+
+  #followers
   resources :users do
     member do
       get :following, :followers

@@ -1,17 +1,52 @@
-<% if :user_signed_in? # if the user is not signed in, render this %>
+<% if !user_signed_in? # if the user is not signed in, render this %>
   <style>
-    html{
+    body{
       background: url("/The-Louvre-2.jpg") no-repeat center center fixed; /*only displays once*/
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
     }
+    h1{
+      color: white;
+      font-weight: bold;
+    }
+    .container-index {
+      margin-right: 15%;
+      margin-left: 15%;
+    }
+    .text{
+      color: white;
+      font-weight: 300;
+    }
+    .log-in{
+      float: right;
+      width: 250px;
+      height: 250px;
+    }
   </style>
+  <div class="container-index row">
+    <div class="col-sm-6">
+      <h1>Welcome to EAZEL[social]</h1>
+      <p class="text">
+        EAZEL helps museums and galleries move their physical and temporary exhibitions online with a virtual reality technology.
+        People can enjoy exhibitions of the leading art institutions from all around the world without geographical and time limits.
+        Eazel democratizes experiencing art from anywhere at anytime. We believe anyone should be able to access great art exhibitions from all around the world.
+        Eazel therefore, creates a renaissance for the appreciation of art in the contemporary era.
+      </p>
+    </div>
+    <div class="col-sm-6">
+      <div class="log-in panel">
+
+      </div>
+    </div>
+  </div>
 
 <% else # if the user is signed in %>
 
-Not Signed In
+Signed In
+Followers:
+<%= current_user.followers.count %>
 
 <% end %>
 
