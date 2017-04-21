@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     #route for comments
     resources :comments
   end
-  root 'posts#index'
+  root 'pages#home'
   #stop file structure from being visible in the site
   get 'home' => 'pages#home'
   get 'user/:id' => 'pages#profile'

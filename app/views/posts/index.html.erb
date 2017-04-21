@@ -43,10 +43,53 @@
   </div>
 
 <% else # if the user is signed in %>
+<!-- Display User Info-->
+<div class = 'row'>
+  <div class = 'col-xs-3'>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p>User Info</p>
+        <p> Current User: </p><%= @username %>
+        <p> Followers: </p>
+      </div>
+    </div>
+  </div>
 
-Signed In
-Followers:
-<%= current_user.followers.count %>
+<!-- Display Post Feed -->
+  <div class = 'col-xs-6'>
+    <%= render '/posts/form' %>
+    <% for @post in @posts %>
+    <div class="panel panel-default">
+      <div class="panel-body">
+    <p>
+      <%= link_to @post.title, @post %>
+      <%= link_to (image_tag @post.image.url(:small)), @post %>
+      <% if @post.comments.count == 1 %>
+      <p></p>
+      <%= @post.comments.count %>
+      Comment
+    <% else %>
+      <p></p>
+      <%= @post.comments.count %>
+      Comments
+    <% end %>
+      <p>
+        <%= @post.get_likes.size %>
+        Likes
+      </p>
+    </p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div class = 'col-xs-3'>
+    <%= render '/layouts/follow_button', :user => User.find_by_name(params[:id]) %>
+    <div class = "panel panel-default">
+      <div class="panel-body">
+      </div>
+    </div>
+  </div>
+</div>
 
 <% end %>
 

@@ -1,5 +1,4 @@
 <%= @username %>'s profile
-<%= link_to "Add Post", new_post_path(@post) %>
 <div class = 'row'>
   <div class = 'col-xs-3'>
     <div class="panel panel-default">
@@ -23,10 +22,11 @@
     <% end %>
   </div>
   <div class = 'col-xs-3'>
-    <div class="panel panel-default">
+    <%= render '/layouts/follow_button', :user => User.find_by_name(params[:id]) %>
+    <div class = "panel panel-default">
       <div class="panel-body">
-    <p>Additional</p>
-    <%= render '/layouts/follow_button' %>
+        <h5 style="color: grey, font-size 125%;"> Followers:</h5>
+        <%= User.find_by_name(params[:id]).followers.count %>
       </div>
     </div>
   </div>
