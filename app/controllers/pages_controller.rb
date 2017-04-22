@@ -22,7 +22,9 @@ class PagesController < ApplicationController
   end
 
   def home
-    @username = params[:id]
+    if (User.find_by_name(params[:id]))
+      @username = params[:id]
+    end
     @posts = Post.all
     @newPost = Post.new
   end
