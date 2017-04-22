@@ -52,6 +52,7 @@ gem 'cancan'
 #MEDIA/FILE UPLOAD
 gem 'paperclip'
 gem 'carrierwave'
+gem 'mini_magick'
 
 #ACTS_AS SERIES
 gem 'acts_as_votable'
