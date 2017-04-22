@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
-  
+
   before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_auth # third-party auth
   def index #the algorithm for sorting a post for the user would go here
     @posts = Post.all.order("created_at DESC")
   end
@@ -59,6 +60,11 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :link, :description, :image)
+  end
+
+  # third-party auth
+  def set_auth
+    @auth = session[:omniauth] if session[:omniauth]
   end
 
 

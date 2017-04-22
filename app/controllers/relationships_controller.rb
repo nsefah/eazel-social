@@ -11,4 +11,5 @@ class RelationshipsController < ApplicationController
     current_user.unfollow(user)
     redirect_to(:back)
   end
+
 end

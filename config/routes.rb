@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+
+  # routes for pages
+  get 'profile' => 'pages#profile'
+  get 'artists' => 'pages#artists'
+  get 'themes' => 'pages#themes'
+  get 'highlights' => 'pages#highlights'
+
+  # routes for landing pages
+  get 'posts/index' => 'posts#index'
+
+  get 'home/index'
+  get 'home/profile'
+
+  # dynamic route for third-party login
+  get 'auth/:provider/callback', to: "sessions#create"
+  delete 'sign_out', to: "sessions#destroy", as: 'sign_out'
+
   #route for users
   devise_for :users
   resources :users do
