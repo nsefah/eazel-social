@@ -29,16 +29,7 @@ class PagesController < ApplicationController
     @newPost = Post.new
   end
 
-  def new
-  end
-
-  def show
-  end
-
-  def edit
-  end
-
-  def form
-  end
+  private
+    #this should get the user the page belongs to for
 
 end

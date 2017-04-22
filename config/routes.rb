@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
   #route for posts
   resources :posts do
     member do
@@ -23,8 +24,13 @@ Rails.application.routes.draw do
     #route for comments
     resources :comments
   end
+  
+  #route for relationships
+  resources :relationships
+
   root 'pages#home'
   #stop file structure from being visible in the site
   get 'home' => 'pages#home'
   get 'user/:id' => 'pages#profile'
+  get 'user/edit' => 'users#edit'
 end
